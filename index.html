@@ -166,25 +166,6 @@
     .stat b{display:block;font-size:clamp(28px,4vw,40px);font-weight:700;color:var(--red);line-height:1.1}
     .stat span{font-size:14px;color:var(--ink-2)}
 
-    /* Latest */
-    .posts{display:grid;grid-template-columns:1fr;gap:24px;margin-top:clamp(28px,4vw,48px)}
-    .post{text-decoration:none;display:flex;flex-direction:column;gap:14px}
-    .post picture{border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9;display:block}
-    .post img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-    .post:hover img{transform:scale(1.03)}
-    .post small{color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:12px}
-    .post h3{font-size:clamp(20px,2vw,24px);font-weight:600;line-height:1.25}
-    .post:hover h3{text-decoration:underline;text-underline-offset:4px}
-
-    .signup{margin-top:clamp(40px,6vw,72px);background:var(--ink);color:#fff;border-radius:var(--radius);padding:clamp(28px,5vw,56px);display:grid;gap:20px}
-    .signup h3{font-size:clamp(22px,2.6vw,30px);font-weight:600}
-    .signup p{color:#c9cdd3}
-    .signup form{display:flex;flex-direction:column;gap:10px}
-    .signup input{min-height:52px;border-radius:999px;border:1px solid #3a3d42;background:#2a2d31;color:#fff;padding:0 22px;font:inherit;font-size:16px;width:100%}
-    .signup input::placeholder{color:#9aa0a6}
-    .signup .fine{font-size:13px;color:#9aa0a6}
-    .signup .ok{color:var(--yellow);font-weight:600;min-height:1.5em}
-
     /* Contact strip */
     .contact{display:grid;grid-template-columns:1fr;gap:16px}
     .contact-card{border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:10px}
@@ -239,8 +220,6 @@
     @media (min-width:600px){
       .rail{grid-auto-columns:minmax(240px,42%)}
       .stats{grid-template-columns:repeat(4,1fr)}
-      .signup form{flex-direction:row}
-      .signup input{flex:1}
       .legal{flex-direction:row;justify-content:space-between;align-items:center}
     }
     /* ≥ 900px */
@@ -252,8 +231,6 @@
       .card{min-height:640px}
       .card.wide{grid-column:1 / -1;min-height:600px}
       .benefits{grid-template-columns:repeat(3,1fr)}
-      .posts{grid-template-columns:repeat(3,1fr)}
-      .signup{grid-template-columns:1fr 1.2fr;align-items:center}
       .contact{grid-template-columns:repeat(3,1fr)}
       .footer-brand{flex-direction:row;justify-content:space-between;align-items:center}
       .fcols{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;padding-top:32px}
@@ -352,7 +329,6 @@
       <a href="#services">AMC &amp; Servicing <svg width="18" height="18"><use href="#i-right"/></svg></a>
       <h4>Company</h4>
       <a href="#why">Why Sanark <svg width="18" height="18"><use href="#i-right"/></svg></a>
-      <a href="#latest">Guides &amp; news <svg width="18" height="18"><use href="#i-right"/></svg></a>
       <a href="#contact">Contact &amp; locations <svg width="18" height="18"><use href="#i-right"/></svg></a>
     </nav>
     <div class="drawer-cta">
@@ -381,7 +357,7 @@
           <source media="(max-width:767px)" type="image/avif" srcset="assets/img/hero-ups-m.avif">
           <source media="(max-width:767px)" type="image/webp" srcset="assets/img/hero-ups-m.webp">
           <source type="image/avif" srcset="assets/img/hero-ups.avif">
-          <img src="assets/img/hero-ups.webp" alt="Server room protected by Sanark Online UPS" width="1600" height="900" fetchpriority="high" decoding="async">
+          <img src="assets/img/hero-ups.webp" alt="Bengaluru family relaxing at home during a power cut, powered by a Sanark UPS" width="1280" height="720" fetchpriority="high" decoding="async">
         </picture>
         <div class="hero-content">
           <p class="eyebrow">Made in Bengaluru</p>
@@ -571,46 +547,7 @@
       </div>
     </section>
 
-    <section class="section" id="latest" aria-labelledby="latest-title">
-      <div class="wrap">
-        <h2 class="section-title" id="latest-title">Guides &amp; news from Sanark</h2>
-        <div class="posts">
-          <a class="post" href="#">
-            <picture><source type="image/avif" srcset="assets/img/post-sizing.avif"><img src="assets/img/post-sizing.webp" alt="" width="960" height="540" loading="lazy" decoding="async"></picture>
-            <small>Buying guide</small>
-            <h3>How to choose the right UPS size for your home or office</h3>
-          </a>
-          <a class="post" href="#">
-            <picture><source type="image/avif" srcset="assets/img/post-battery.avif"><img src="assets/img/post-battery.webp" alt="" width="960" height="540" loading="lazy" decoding="async"></picture>
-            <small>Maintenance</small>
-            <h3>Tubular battery care: simple habits that extend battery life</h3>
-          </a>
-          <a class="post" href="#">
-            <picture><source type="image/avif" srcset="assets/img/post-ups.avif"><img src="assets/img/post-ups.webp" alt="" width="960" height="540" loading="lazy" decoding="async"></picture>
-            <small>Explainer</small>
-            <h3>Online vs off-line UPS: which one do you actually need?</h3>
-          </a>
-        </div>
-
-        <div class="signup">
-          <div>
-            <h3>Get offers and power tips from Sanark</h3>
-            <p>Seasonal offers, maintenance reminders and new product launches. No spam.</p>
-          </div>
-          <div>
-            <form id="signup" novalidate>
-              <label class="sr-only" for="email">Email</label>
-              <input id="email" type="email" placeholder="Enter your email" autocomplete="email" required>
-              <button class="btn btn-primary" type="submit">Sign up</button>
-            </form>
-            <p class="ok" id="signupMsg" role="status"></p>
-            <p class="fine">By signing up you agree to receive emails from Sanark Power Systems.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact" aria-labelledby="contact-title" style="padding-top:0">
+    <section class="section" id="contact" aria-labelledby="contact-title">
       <div class="wrap">
         <h2 class="section-title" id="contact-title" style="margin-bottom:clamp(28px,4vw,48px)">Talk to Sanark</h2>
         <div class="contact">
@@ -687,8 +624,6 @@
           <ul>
             <li><a href="tel:+919964404011">Book a service</a></li>
             <li><a data-wa="Warranty claim" href="#">Warranty claims</a></li>
-            <li><a href="#latest">Buying guides</a></li>
-            <li><a href="#latest">Battery care</a></li>
           </ul>
         </details>
         <details>
@@ -903,15 +838,6 @@
     }));
     $('#dlgClose').addEventListener('click', () => dlg.close());
     dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
-
-    $('#signup').addEventListener('submit', e => {
-      e.preventDefault();
-      const email = $('#email'), msg = $('#signupMsg');
-      if (!email.checkValidity()) { msg.textContent = 'Please enter a valid email address.'; email.focus(); return; }
-      location.href = `mailto:sanarkups@gmail.com?subject=${encodeURIComponent('Newsletter sign-up')}&body=${encodeURIComponent('Please add ' + email.value + ' to the Sanark mailing list.')}`;
-      msg.textContent = 'Thanks! We’ll be in touch.';
-      email.value = '';
-    });
 
     $('#year').textContent = new Date().getFullYear();
   })();
